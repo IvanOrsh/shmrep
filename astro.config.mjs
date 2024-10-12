@@ -13,6 +13,13 @@ export default defineConfig({
 		defaultLocale: 'en',
 		locales: ['es', 'en', 'pt-br'],
 	},
+
+	markdown: {
+		shikiConfig: {
+			theme: 'dracula',
+		},
+	},
+
 	prefetch: true,
 	integrations: [
 		tailwind({
