@@ -1,4 +1,5 @@
 import typography from '@tailwindcss/typography';
+import colors from 'tailwindcss/colors';
 
 const withAlphaValue = (varName) => `hsl(var(--${varName}) / <alpha-value>)`;
 
@@ -12,6 +13,8 @@ export default {
 		},
 		extend: {
 			colors: {
+				primary: colors.emerald,
+				secondary: colors.purple,
 				foreground: {
 					brand: withAlphaValue('foreground-brand-color'),
 					accent: withAlphaValue('foreground-accent-color'),
