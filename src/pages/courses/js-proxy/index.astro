@@ -11,9 +11,7 @@ const meta = {
 		'Learn (or refresh your knowlege) about JavaScript Proxy. It is valuabe because it offers advanced control over object behavior.',
 };
 
-const [firstChapterEntry] = await getCollection('js-proxy', ({ data }) => {
-	return data.chapterNumber === 1;
-});
+const chapters = await getCollection('js-proxy');
 ---
 
 <Layout meta={meta}>
@@ -28,12 +26,16 @@ const [firstChapterEntry] = await getCollection('js-proxy', ({ data }) => {
 			</p>
 		</section>
 		<div class="not-prose">
-			<Card
-				title={`Chapter 1: ${firstChapterEntry.data.title}`}
-				href={`/courses/js-proxy/${firstChapterEntry.slug}`}
-			>
-				{firstChapterEntry.data.description}
-			</Card>
+			{
+				chapters.map((chapter, i) => (
+					<Card
+						title={`Chapter ${i + 1}: ${chapter.data.title}`}
+						href={`/courses/js-proxy/${chapter.slug}`}
+					>
+						{chapter.data.description}
+					</Card>
+				))
+			}
 		</div>
 		<!-- <Hero chapterCount={data.chapterCount} /> -->
 
