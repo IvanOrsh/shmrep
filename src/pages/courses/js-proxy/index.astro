@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+
+import Card from '@/components/Card.astro';
+import Layout from '@/layouts/Layout.astro';
+
+const meta = {
+	title: 'JavaScript Proxy/Learn',
+	description:
+		'Learn (or refresh your knowlege) about JavaScript Proxy. It is valuabe because it offers advanced control over object behavior.',
+};
+
+const [firstChapterEntry] = await getCollection('js-proxy', ({ data }) => {
+	return data.chapterNumber === 1;
+});
+---
+
+<Layout meta={meta}>
+	<article class="brand-prose pt-[5vh]">
+		<section>
+			<h1>Learn about JavaScript Proxy</h1>
+			<p>
+				Learning about JavaScript's Proxy is valuable because it offers advanced
+				control over object behavior, allowing developers to intercept and
+				redefine fundamental operations like property access, assignment, and
+				function calls.
+			</p>
+		</section>
+		<div class="not-prose">
+			<Card
+				title={`Chapter 1: ${firstChapterEntry.data.title}`}
+				href={`/courses/js-proxy/${firstChapterEntry.slug}`}
+			>
+				{firstChapterEntry.data.description}
+			</Card>
+		</div>
+		<!-- <Hero chapterCount={data.chapterCount} /> -->
+
+		<section class="mb-8 flex flex-col justify-center px-2">
+			<h2>How does this course work?</h2>
+			<p class="text-emphasis italic">#TODO: add some text here!</p>
+		</section>
+
+		<section class="px-2">
+			<h2>Extra Resources</h2>
+			<p>#TODO: enumerate some usefule resoures here!</p>
+		</section>
+	</article>
+</Layout>
