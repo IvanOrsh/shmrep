@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 
 import Card from '@/components/Card.astro';
 import Layout from '@/layouts/Layout.astro';
+import PageTitle from '@/components/PageTitle.astro';
 
 const meta = {
 	title: 'JavaScript Proxy/Learn',
@@ -18,7 +19,7 @@ const [firstChapterEntry] = await getCollection('js-proxy', ({ data }) => {
 <Layout meta={meta}>
 	<article class="brand-prose pt-[5vh]">
 		<section>
-			<h1>Learn about JavaScript Proxy</h1>
+			<PageTitle>Learn about JavaScript Proxy</PageTitle>
 			<p>
 				Learning about JavaScript's Proxy is valuable because it offers advanced
 				control over object behavior, allowing developers to intercept and

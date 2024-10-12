@@ -3,6 +3,7 @@ import type { GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
 
 import Layout from '@/layouts/Layout.astro';
+import PageTitle from '@/components/PageTitle.astro';
 
 export const getStaticPaths = (async () => {
 	const blogEntries = await getCollection('js-proxy');
@@ -26,7 +27,7 @@ const meta = {
 
 <Layout meta={meta}>
 	<article class="brand-prose">
-		<h1>{entry.data.title}</h1>
+		<PageTitle>{entry.data.title}</PageTitle>
 		<Content />
 	</article>
 </Layout>
