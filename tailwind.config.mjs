@@ -1,14 +1,13 @@
 import typography from '@tailwindcss/typography';
 
-const withAlphaValue = (varName) => `hsl(var(--${varName}) / <alpha-value>)`
-
+const withAlphaValue = (varName) => `hsl(var(--${varName}) / <alpha-value>)`;
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: ['class', '[data-theme="dark"]'],
+	darkMode: ['class', '[data-theme="dark"]'],
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-    fontFamily: {
+		fontFamily: {
 			sans: "'Raleway Variable', system-ui, sans-serif",
 		},
 		extend: {
@@ -30,4 +29,4 @@ export default {
 		},
 	},
 	plugins: [typography],
-}
+};

@@ -4,39 +4,37 @@ import Card from '@/components/Card.astro';
 ---
 
 <Layout>
-	<main>
-		<h1 class="flex flex-col py-32 text-center text-5xl font-bold">
-			<span>Welcome to</span>
-			<span
-				class="bg-gradient-to-t from-green-600 to-purple-600 bg-clip-text text-transparent drop-shadow dark:from-green-200 dark:to-purple-500"
-				>Smrep</span
-			>
-		</h1>
+	<h1 class="flex flex-col py-32 text-center text-5xl font-bold">
+		<span>Welcome to</span>
+		<span
+			class="bg-gradient-to-t from-green-600 to-purple-600 bg-clip-text text-transparent drop-shadow dark:from-green-200 dark:to-purple-500"
+			>Smrep</span
+		>
+	</h1>
 
-		<!-- TODO:better description required -->
-		<p class="breakout mb-32 text-center text-2xl">
-			Where curiousity journeys, exploration, and play, <strong
-				class="bg-gradient-to-t from-green-600 to-purple-600 bg-clip-text text-transparent drop-shadow dark:from-green-200 dark:to-purple-500"
-				>level you up</strong
-			>!
-		</p>
+	<!-- TODO:better description required -->
+	<p class="breakout mb-32 text-center text-2xl">
+		Where curiousity journeys, exploration, and play, <strong
+			class="bg-gradient-to-t from-green-600 to-purple-600 bg-clip-text text-transparent drop-shadow dark:from-green-200 dark:to-purple-500"
+			>level you up</strong
+		>!
+	</p>
 
-		<ul class="breakout grid gap-8 md:grid-cols-2">
-			<Card href="/courses" title="Courses">
-				Learn <strong>Fullstack Typescript</strong> development with our open-source
-				and free courses!
-			</Card>
-			<Card href="/play" title="Play">
-				Try our free browser-based games, implemented in a variety of Javascript
-				Frameworks!
-			</Card>
-			<Card href="#" title="Videos & Streams">
-				Watch quick fluff-free guides and tutorials & long live-coding streams,
-				over at our YouTube channel!
-			</Card>
-			<Card href="#" title="Community">
-				Join our amazing Discord community 💜 Suggest games, courses, and more!
-			</Card>
-		</ul>
-	</main>
+	<ul class="breakout grid gap-8 md:grid-cols-2">
+		<Card href="/courses" title="Courses">
+			Learn <strong>Fullstack Typescript</strong> development with our open-source
+			and free courses!
+		</Card>
+		<Card href="/play" title="Play">
+			Try our free browser-based games, implemented in a variety of Javascript
+			Frameworks!
+		</Card>
+		<Card href="#" title="Videos & Streams">
+			Watch quick fluff-free guides and tutorials & long live-coding streams,
+			over at our YouTube channel!
+		</Card>
+		<Card href="#" title="Community">
+			Join our amazing Discord community 💜 Suggest games, courses, and more!
+		</Card>
+	</ul>
 </Layout>

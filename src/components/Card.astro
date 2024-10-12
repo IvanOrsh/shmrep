@@ -30,7 +30,7 @@ const { href, title } = Astro.props;
 		--g3: hsl(var(--g3-hue) 88% 80%);
 		--_animation-duration: var(--short-animation-duration);
 
-		@apply border-foreground-accent relative rounded border shadow;
+		@apply relative rounded border border-foreground-accent shadow;
 
 		> a {
 			background-image: radial-gradient(

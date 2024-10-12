@@ -9,12 +9,16 @@ import solidJs from '@astrojs/solid-js';
 
 // https://astro.build/config
 export default defineConfig({
-  i18n: {
-    defaultLocale: "en",
-    locales: ["es", "en", "pt-br"],
-  },
-  prefetch: true,
-  integrations: [tailwind({
-    applyBaseStyles: false,
-  }), partytown(), solidJs()]
+	i18n: {
+		defaultLocale: 'en',
+		locales: ['es', 'en', 'pt-br'],
+	},
+	prefetch: true,
+	integrations: [
+		tailwind({
+			applyBaseStyles: false,
+		}),
+		partytown(),
+		solidJs(),
+	],
 });
