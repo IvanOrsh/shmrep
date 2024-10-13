@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
 import PageTitle from '@/components/PageTitle.astro';
 import Card from '@/components/Card.astro';
+import TableOfContent from '@/components/TableOfContent.astro';
 
 export const getStaticPaths = (async () => {
 	const blogEntries = await getCollection('js-proxy');
@@ -19,7 +20,7 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content, headings } = await entry.render();
 const meta = {
 	title: entry.data.title,
 	description: entry.data.description,
@@ -31,6 +32,7 @@ const [nextChapter] = await getCollection('js-proxy', ({ data }) => {
 ---
 
 <Layout meta={meta}>
+	<TableOfContent headings={headings} />
 	<article class="brand-prose">
 		<PageTitle>{entry.data.title}</PageTitle>
 		<Content />
